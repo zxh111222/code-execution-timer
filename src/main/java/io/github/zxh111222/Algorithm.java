@@ -1,13 +1,12 @@
 package io.github.zxh111222;
 
+
 /**
- * @author XinhaoZheng
- * @version 1.0
- * @description: TODO
- * @date 2024/8/8 9:51
+ * Abstraction of specific algorithms.
  */
 public abstract class Algorithm {
-
+    /**
+     * Storing the specific logic of the algorithm
+     */
     public abstract void execute();
-
 }
