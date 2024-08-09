@@ -8,6 +8,32 @@
     <artifactId>code-execution-timer</artifactId>
     <version>1.0.0</version>
 
+    <name>Code Execution Timer</name>
+    <description>A simple tool to calculate execution time of algorithms for teaching purposes.</description>
+    <url>https://github.com/yourcompany/code-run-timer</url>
+
+    <licenses>
+        <license>
+            <name>The Apache License, Version 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+        </license>
+    </licenses>
+
+    <developers>
+        <developer>
+            <name>zxh111222</name>
+            <email>1305894626@qq.com</email>
+            <organization>zxh111222</organization>
+            <organizationUrl>https://zxh111222.github.io/code-execution-timer</organizationUrl>
+        </developer>
+    </developers>
+
+    <scm>
+        <connection>scm:git:git://github.com/zxh111222/code-execution-timer.git</connection>
+        <developerConnection>scm:git:ssh://github.com:zxh111222/code-execution-timer.git</developerConnection>
+        <url>https://github.com/zxh111222/code-execution-timer/tree/main</url>
+    </scm>
+
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
         <maven.compiler.target>8</maven.compiler.target>
@@ -66,7 +92,31 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-javadoc-plugin</artifactId>
             </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-gpg-plugin</artifactId>
+                <version>3.2.4</version>
+                <executions>
+                    <execution>
+                        <id>sign-artifacts</id>
+                        <phase>verify</phase>
+                        <goals>
+                            <goal>sign</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.sonatype.central</groupId>
+                <artifactId>central-publishing-maven-plugin</artifactId>
+                <version>0.5.0</version>
+                <extensions>true</extensions>
+                <configuration>
+                    <publishingServerId>central</publishingServerId>
+                    <autoPublish>true</autoPublish>
+                    <waitUntil>validated</waitUntil><!-- uploaded、validated、published -->
+                </configuration>
+            </plugin>
         </plugins>
     </build>
-
 </project>
